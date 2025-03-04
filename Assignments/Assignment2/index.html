@@ -143,33 +143,5 @@
             </div>
 
         </footer>
-    
-        <script>
-            // Add scrolled class to header when scrolling
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-    
-            // Slider navigation
-            document.addEventListener('DOMContentLoaded', function() {
-                const slider = document.getElementById('product-slider');
-                const prevBtn = document.getElementById('prev-btn');
-                const nextBtn = document.getElementById('next-btn');
-                const cardWidth = 330; // Card width + gap
-    
-                prevBtn.addEventListener('click', function() {
-                    slider.scrollLeft -= cardWidth;
-                });
-    
-                nextBtn.addEventListener('click', function() {
-                    slider.scrollLeft += cardWidth;
-                });
-            });
-        </script>
     </body>
     </html>
