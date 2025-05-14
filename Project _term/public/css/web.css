@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    padding-top: 76px;
+}
+
+header {
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.3s, box-shadow 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header:hover, header.scrolled {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    background: transparent !important;
+    display: flex; /* Ensure that navbar items are displayed inline */
+    justify-content: space-between; /* Space between logo and menu items */
+    align-items: center; /* Center items vertically */
+    width: 100%;
+}
+
+.form-control {
+    background: transparent;
+}
+
+.logo {
+    background: transparent;
+}
+
+.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0 15px;
+}
+
+.navbar .nav-item {
+    display: inline-block; /* Ensure items are inline */
+}
+
+header:hover .nav-link {
+    color: #000 !important;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* New Styles for 'Previous Tasks' Inline */
+#megaMenuToggle {
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+#megaMenuToggle:hover {
+    opacity: 0.7;
+}
+
+/* Header Icons */
+.header-icons a {
+    color: transparent;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header:hover .header-icons a {
+    color: #000;
+}
+
+.header-icons a:hover {
+    opacity: 0.7;
+}
+
+.product-card {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-card:hover .hover-image {
+    transition: opacity 0.5s ease;
+}
+
+.add-to-cart {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-card:hover .add-to-cart {
+    opacity: 1;
+}
+
+.product-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.product-price {
+    color: #555;
+    margin: 0;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 60px; 
+    left: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 450px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border-radius: 8px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px; /* Optional to add spacing between items */
+}
+
+.menu-item:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.menu-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu-item a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer styles */
+footer {
+    background: #f5f5f5;
+}
+
+footer h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+    line-height: 2;
+}
+
+footer a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: #555;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .hero-section {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .product-card {
+        margin-bottom: 1rem;
+    }
+
+    .hero-section {
+        height: 40vh;
+    }
+    .mega-menu {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        height: 30vh;
+    }
+
+    .product-card {
+        margin-bottom: 10px;
+    }
+
+    .product-info {
+        margin-top: 10px;
+    }
+}
