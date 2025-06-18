@@ -1,0 +1,27 @@
+<!-- Navigation Bar -->
+<header class="w-full bg-white bg-opacity-70 shadow-md fixed top-0 left-0 z-20" style="backdrop-filter: blur(6px);">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 w-full">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0 flex items-center">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Temperley London Logo" class="w-28 h-auto" />
+            </a>
+        </div>
+        <!-- Center: Navigation -->
+        <nav class="main-nav group flex-1 flex justify-center space-x-8 uppercase text-sm font-semibold tracking-wide relative">
+            <%- include('nav-items') %>
+        </nav>
+        <!-- Right: Icons -->
+        <div class="flex items-center space-x-6">
+            <div class="paperclip-icon">
+                <img src="/images/asset 42.svg" alt="Paperclip" class="w-5 h-5">
+            </div>
+            <div class="user-icon cursor-pointer" id="openLogin">
+                <img src="/images/asset 46.svg" alt="User" class="w-5 h-5">
+            </div>
+            <div class="bag-icon">
+                <img src="/images/asset 47.svg" alt="Shopping bag" class="w-5 h-5">
+            </div>
+        </div>
+    </div>
+</header> 

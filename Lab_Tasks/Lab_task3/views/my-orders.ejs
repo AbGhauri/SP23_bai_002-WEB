@@ -1,0 +1,13 @@
+<h1>My Orders</h1>
+<ul>
+  <% if (orders.length === 0) { %>
+    <li>No orders found.</li>
+  <% } else { %>
+    <% orders.forEach(order => { %>
+      <li>
+        <strong>Order Date:</strong> <%= order.createdAt.toLocaleString() %><br>
+        <strong>Items:</strong> <%= order.items.join(', ') %>
+      </li>
+    <% }) %>
+  <% } %>
+</ul> 

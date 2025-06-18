@@ -1,0 +1,418 @@
+/* General Reset */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-serif-custom {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Dropdown Transition and Highlight */
+.group:hover .nav-dropdown,
+.group:focus-within .nav-dropdown {
+  display: flex !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-dropdown {
+  display: none !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 500px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  z-index: 20;
+  flex-direction: row;
+}
+
+.group:hover .nav-dropdown {
+  animation: fadeIn 0.3s;
+}
+
+.nav-dropdown h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.nav-dropdown a {
+  font-size: 1rem;
+  color: #111;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-dropdown a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.nav-dropdown ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  transition: color 0.2s, opacity 0.2s;
+  opacity: 0.7;
+}
+
+.main-nav a:hover {
+  color: #000;
+  opacity: 1;
+}
+
+.main-nav .group:hover a:not(.shop-link),
+.main-nav .group:focus-within a:not(.shop-link) {
+  opacity: 0.3;
+}
+
+/* Transparent Header on Hero Image */
+header {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background-color: white;
+}
+
+header.scrolled .nav-link {
+  color: black;
+}
+
+header.scrolled .nav-link:hover {
+  color: black;
+}
+
+/* Default Header (Transparent) */
+.nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f1f1f1; /* Slightly lighter white for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.custom-bg {
+  background-image: url('data:image/svg+xml,%3Csvg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="800" height="600" fill="%23e2e8f0"/%3E%3Ctext x="50%25" y="50%25" font-family="Arial" font-size="30" fill="%23a0aec0" dominant-baseline="middle" text-anchor="middle"%3EImage Placeholder%3C/text%3E%3C/svg%3E');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+.card:hover::before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card-text {
+  position: relative;
+  z-index: 10;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.card-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="#a0aec0"/><text x="50%25" y="50%25" font-family="Arial" font-size="30" fill="#4a5568" dominant-baseline="middle" text-anchor="middle">Image Placeholder 1</text></svg>');
+}
+
+.card-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="#a0aec0"/><text x="50%25" y="50%25" font-family="Arial" font-size="30" fill="#4a5568" dominant-baseline="middle" text-anchor="middle">Image Placeholder 2</text></svg>');
+}
+
+.card-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="#a0aec0"/><text x="50%25" y="50%25" font-family="Arial" font-size="30" fill="#4a5568" dominant-baseline="middle" text-anchor="middle">Image Placeholder 3</text></svg>');
+}
+
+.popular-card {
+  height: 300px;
+}
+
+.popular-card img {
+  object-fit: cover;
+}
+
+.input-underline {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+  outline: none;
+  background: transparent;
+}
+
+.input-underline:focus {
+  border-color: #000;
+}
+
+#sidebarLogin {
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  #sidebarLogin {
+    max-width: 100vw;
+    width: 100vw;
+  }
+}
+
+/* The Shire Hero Section Styles */
+.shire-title {
+  font-size: 8rem;
+  line-height: 0.8;
+  font-weight: 700;
+  font-family: Georgia, serif;
+}
+
+.font-sans-alt {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (max-width: 768px) {
+  .shire-title {
+    font-size: 4rem;
+    line-height: 0.9;
+  }
+}
+
+/* Dim all nav links when hovering the nav */
+.main-nav.group:hover .nav-link,
+.main-nav.group:focus-within .nav-link {
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+/* Only the hovered or focused nav-link stays fully opaque */
+.main-nav.group .relative:hover > .nav-link,
+.main-nav.group .relative:focus-within > .nav-link {
+  opacity: 1 !important;
+}
+
+.font-didot {
+  font-family: linotype-didot, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.font-gill {
+  font-family: gill-sans-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.size-bar {
+  display: none;
+  z-index: 10;
+}
+
+.hover-image {
+  display: none;
+}
+
+.slider-btn-back,
+.slider-btn-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shire-hero-grid {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.7fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .shire-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .shire-hero-grid > div {
+    padding-right: 0 !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+
+.product-slider-card {
+  width: calc((100% / 3) - (2 * 0.5rem)); /* Adjust for gap-x-4 (16px total for 2 gaps, so 8px per card edge) */
+}
+
+/* New Arrivals Section Styles from demo_prodeuct.html */
+.section-title {
+  font-family: 'Cormorant Garamond', serif; /* Use your custom font */
+  font-size: 2.5rem; /* Adjusted for centered and slightly smaller */
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.product-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  gap: 1rem; /* This is gap-x-4 from Tailwind (16px) */
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  padding: 1rem; /* Add padding to slider itself */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.product-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.product-slider-card {
+  width: calc((100% / 3) - (2 * 0.5rem)); /* Adjust for gap-x-4 (16px total for 2 gaps, so 8px per card edge) */
+  flex-shrink: 0;
+  position: relative;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.product-card .main-image,
+.product-card .hover-image {
+  width: 100%;
+  height: 100%; /* Ensure images fill the container */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  border-radius: 0.25rem;
+  display: block; /* Ensure main image is visible by default */
+}
+
+.relative.mb-4 {
+  position: relative; /* Ensure this is set for absolute children */
+  min-height: 250px; /* Set a fixed min-height for stable positioning */
+  overflow: hidden; /* Hide any overflow if images exceed this */
+}
+
+.hover-image {
+  display: none; /* Initially hide the hover image */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.size-bar {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: auto;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+}
+
+.size-option {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.size-option:hover {
+  background-color: #f7fafc;
+}
+
+.color-option {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.color-option.ring-2 {
+  box-shadow: 0 0 0 2px black; /* Custom ring for selected color */
+}
+
+/* Login Sidebar Styles */
+.font-serif-custom {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.font-sans-custom {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

@@ -1,0 +1,50 @@
+<div class="min-h-screen flex">
+    <!-- Left Section (Image Placeholder) -->
+    <div class="w-1/2 flex-shrink-0 bg-gray-200 hidden md:block">
+        <img src="/images/login.png" alt="Login" class="object-cover w-full h-full">
+    </div>
+    <!-- Right Section (Form and Text) -->
+    <div class="w-full md:w-1/2 flex items-center justify-center p-8 bg-white">
+        <div class="w-full max-w-sm">
+            <h1 class="font-serif-custom text-4xl mb-8 text-gray-800">Log In</h1>
+            <% if (typeof error !== 'undefined' && error) { %>
+                <div class="mb-4 text-red-600 text-sm"><%= error %></div>
+            <% } %>
+            <% if (typeof success !== 'undefined' && success) { %>
+                <div class="mb-4 text-green-600 text-sm"><%= success %></div>
+            <% } %>
+            <form action="/login" method="POST">
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email address*</label>
+                    <input type="email" id="email" name="email" required class="w-full border-0 border-b border-gray-300 focus:border-black focus:ring-0 bg-transparent px-0 py-2 text-base">
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password*</label>
+                    <input type="password" id="password" name="password" required class="w-full border-0 border-b border-gray-300 focus:border-black focus:ring-0 bg-transparent px-0 py-2 text-base">
+                </div>
+                <button type="submit" class="w-full border border-gray-500 px-4 py-2 text-sm tracking-wider bg-gray-100 hover:bg-gray-200 text-gray-800 transition duration-200">
+                    LOGIN
+                </button>
+            </form>
+            <div class="flex justify-between items-center mt-4 text-xs text-gray-700">
+                <a href="#" class="underline hover:text-gray-900">Forgot your password? Reset here</a>
+                <span>* Required fields</span>
+            </div>
+            <!-- Create an Account Section -->
+            <div class="mt-8">
+                <p class="text-sm text-gray-700 mb-4">
+                    Don't have an account yet? <a href="/register" class="underline hover:text-gray-900">Sign up</a> and take advantage of these benefits:
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-700 mb-6">
+                    <li>A faster checkout experience</li>
+                    <li>Track your orders & order history</li>
+                    <li>Create & share multiple wishlist boards</li>
+                    <li>Receive 10% off when signed up to email & SMS</li>
+                </ul>
+                <a href="/register" class="w-full block text-center bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 text-sm tracking-wider transition duration-200">
+                    CREATE AN ACCOUNT
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 

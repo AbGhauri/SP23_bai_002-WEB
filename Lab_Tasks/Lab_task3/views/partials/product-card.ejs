@@ -1,0 +1,26 @@
+<div class="product-slider-card">
+    <div class="product-card">
+        <!-- Image with Size Overlay -->
+        <div class="relative mb-4">
+            <img src="/images/<%= mainImage %>" alt="<%= name %>" class="main-image">
+            <img src="/images/<%= hoverImage %>" alt="<%= name %> Hover" class="hover-image">
+            <div class="size-bar hidden">
+                <% sizes.forEach(function(size) { %>
+                    <span class="size-option"><%= size %></span>
+                <% }); %>
+            </div>
+        </div>
+        <!-- Product Info: Colors, Name, Price -->
+        <div class="mt-auto">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="font-semibold text-lg mb-0"><%= name %></h3>
+                <p class="product-price font-semibold text-base mb-0">£<%= price %></p>
+            </div>
+            <div class="color-bar flex gap-2 justify-center">
+                <% colors.forEach(function(color) { %>
+                    <span class="color-option bg-<%= color %>"></span>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div> 
