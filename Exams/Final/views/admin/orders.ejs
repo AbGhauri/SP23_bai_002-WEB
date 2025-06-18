@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Orders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <%- include('_admin-nav') %>
+  <main class="max-w-5xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-6">Orders</h1>
+    <table class="w-full bg-white rounded shadow">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">Customer</th>
+          <th class="p-2">Items</th>
+          <th class="p-2">Total</th>
+          <th class="p-2">Date</th>
+          <th class="p-2">Status</th>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(order => { %>
+          <tr>
+            <td class="p-2"><%= order.name %> (<%= order.email %>)</td>
+            <td class="p-2">
+              <ul>
+                <% order.items.forEach(item => { %>
+                  <li><%= item.name %> x <%= item.quantity %></li>
+                <% }) %>
+              </ul>
+            </td>
+            <td class="p-2">£<%= order.total %></td>
+            <td class="p-2"><%= order.createdAt.toLocaleString() %></td>
+            <td class="p-2"><%= order.status %></td>
+            <td class="p-2">
+              <form action="/admin/orders/<%= order._id %>/status" method="POST" class="flex gap-2">
+                <select name="status" class="border rounded px-2 py-1">
+                  <option value="Pending" <%= order.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+                  <option value="Completed" <%= order.status === 'Completed' ? 'selected' : '' %>>Completed</option>
+                  <option value="Cancelled" <%= order.status === 'Cancelled' ? 'selected' : '' %>>Cancelled</option>
+                </select>
+                <button type="submit" class="bg-blue-600 text-white px-2 py-1 rounded">Update</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html> 

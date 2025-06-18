@@ -1,0 +1,28 @@
+<div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6 text-gray-900">My Complaints</h1>
+    <% if (typeof success !== 'undefined' && success) { %>
+      <div class="mb-6 p-4 bg-green-100 border border-green-300 text-green-800 rounded">
+        <%= success %>
+      </div>
+    <% } %>
+    <table class="w-full bg-white rounded shadow">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">Subject</th>
+          <th class="p-2">Message</th>
+          <th class="p-2">Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% complaints.forEach(function(complaint) { %>
+          <tr>
+            <td class="p-2"><%= complaint.subject %></td>
+            <td class="p-2"><%= complaint.message %></td>
+            <td class="p-2"><%= complaint.timestamp.toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div> 
