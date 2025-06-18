@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.formdesign{
+    font-size: 20px;
+}
+
+/* Removed .formdesign input rules as requested */
+.formerror {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.but{
+    border-radius: 9px;
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    margin: 20px 22px;
+}
